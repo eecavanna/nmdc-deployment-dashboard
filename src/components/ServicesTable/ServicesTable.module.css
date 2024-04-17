@@ -1,0 +1,4 @@
+/* Reference: https://vitejs.dev/guide/features#css-modules */
+.nonData {
+  background-color: var(--bs-border-color) !important;
+}

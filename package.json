@@ -12,9 +12,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.29.2",
+    "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "date-fns": "^3.6.0",
-    "fetch-react-hook": "^1.0.4",
     "jsonpath-plus": "^8.1.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
@@ -22,6 +23,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.28.11",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
