@@ -92,7 +92,64 @@ const getNmdcSchemaLatestPyPiPackageVersion = async () => {
   };
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const pluckCronJobTimestamps = (json: any) => {
+  return {
+    lastScheduleTime: getValueAtJsonPath<string>(
+      "$.cronJobStatus.lastScheduleTime",
+      json,
+    ),
+    lastSuccessfulTime: getValueAtJsonPath<string>(
+      "$.cronJobStatus.lastSuccessfulTime",
+      json,
+    ),
+  };
+};
+
+const getProductionDataPortalIngestCronJobTimestamps = async () => {
+  const json = await fetchJson(
+    "https://nmdc-privileged-proxy.eecavanna.workers.dev/spin-proxy/workloads/cronjob:nmdc:portal-ingest",
+  );
+  return pluckCronJobTimestamps(json);
+};
+
+const getDevelopmentDataPortalIngestCronJobTimestamps = async () => {
+  const json = await fetchJson(
+    "https://nmdc-privileged-proxy.eecavanna.workers.dev/spin-proxy/workloads/cronjob:nmdc-dev:portal-ingest",
+  );
+  return pluckCronJobTimestamps(json);
+};
+
+const getProductionMongoBackupCronJobTimestamps = async () => {
+  const json = await fetchJson(
+    "https://nmdc-privileged-proxy.eecavanna.workers.dev/spin-proxy/workloads/cronjob:nmdc:backup-mongo",
+  );
+  return pluckCronJobTimestamps(json);
+};
+
+const getNapaMongoBackupCronJobTimestamps = async () => {
+  const json = await fetchJson(
+    "https://nmdc-privileged-proxy.eecavanna.workers.dev/spin-proxy/workloads/cronjob:nmdc-napa:backup-mongo",
+  );
+  return pluckCronJobTimestamps(json);
+};
+
+const getProductionPostgresBackupCronJobTimestamps = async () => {
+  const json = await fetchJson(
+    "https://nmdc-privileged-proxy.eecavanna.workers.dev/spin-proxy/workloads/cronjob:nmdc:backup-postgres",
+  );
+  return pluckCronJobTimestamps(json);
+};
+
+const getSandboxClearSubmissionsCronJobTimestamps = async () => {
+  const json = await fetchJson(
+    "https://nmdc-privileged-proxy.eecavanna.workers.dev/spin-proxy/workloads/cronjob:nmdc-sandbox:clear-submissions-cron-job",
+  );
+  return pluckCronJobTimestamps(json);
+};
+
 const api = {
+  // Service endpoints:
   getProductionRuntimeAppAndSchemaVersion,
   getDevelopmentRuntimeAppAndSchemaVersion,
   getNapaRuntimeAppAndSchemaVersion,
@@ -101,6 +158,14 @@ const api = {
   getSandboxDataPortalVersion,
   getNmdcSchemaLatestGitHubReleaseTagName,
   getNmdcSchemaLatestPyPiPackageVersion,
+
+  // CronJob endpoints:
+  getProductionDataPortalIngestCronJobTimestamps,
+  getDevelopmentDataPortalIngestCronJobTimestamps,
+  getProductionMongoBackupCronJobTimestamps,
+  getNapaMongoBackupCronJobTimestamps,
+  getProductionPostgresBackupCronJobTimestamps,
+  getSandboxClearSubmissionsCronJobTimestamps,
 };
 
 export default api;

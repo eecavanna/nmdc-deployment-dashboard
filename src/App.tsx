@@ -2,6 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import ThemeSelector from "./components/ThemeSelector.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ServicesTable from "./components/ServicesTable/ServicesTable.tsx";
+import CronJobsTable from "./components/CronJobsTable/CronJobsTable.tsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -13,6 +14,8 @@ const queryClient = new QueryClient({
     },
   },
 });
+
+const now = new Date();
 
 function App() {
   return (
@@ -32,6 +35,12 @@ function App() {
           <Col>
             <h2>Services</h2>
             <ServicesTable />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <h2>CronJobs</h2>
+            <CronJobsTable baseDate={now} />
           </Col>
         </Row>
       </Container>
