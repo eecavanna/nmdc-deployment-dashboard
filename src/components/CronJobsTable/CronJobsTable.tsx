@@ -52,8 +52,8 @@ const CronJobsTable: React.FC<Props> = ({ baseDate }) => {
               overlay={
                 <Popover>
                   <Popover.Body>
-                    Difference between when the CronJob was last scheduled to
-                    run and when the CronJob last ran successfully.
+                    Time difference between when the CronJob was last scheduled
+                    to run and when the CronJob last ran successfully.
                   </Popover.Body>
                 </Popover>
               }

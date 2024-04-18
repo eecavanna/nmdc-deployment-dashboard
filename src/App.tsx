@@ -22,24 +22,22 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Container className={"py-5"}>
         <Row>
-          <Col className={"text-end"}>
+          <Col>
+            <h1 className={"mb-4"}>Deployment Dashboard</h1>
+          </Col>
+          <Col className={"text-end flex-grow-0"}>
             <ThemeSelector />
           </Col>
         </Row>
         <Row>
           <Col>
-            <h1>Deployment Dashboard</h1>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <h2>Services</h2>
+            <h2 className={"mb-3"}>Services</h2>
             <ServicesTable />
           </Col>
         </Row>
         <Row>
           <Col>
-            <h2>CronJobs</h2>
+            <h2 className={"mb-3"}>CronJobs</h2>
             <CronJobsTable baseDate={now} />
           </Col>
         </Row>

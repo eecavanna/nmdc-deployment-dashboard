@@ -59,7 +59,7 @@ const ServicesTable: React.FC<Props> = () => {
               rootClose={true}
               rootCloseEvent={"click"}
               trigger={"click"}
-              placement={"right"}
+              placement={"top"}
               overlay={
                 <Popover>
                   <Popover.Body className={"p-1"}>
