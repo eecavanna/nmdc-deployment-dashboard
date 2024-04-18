@@ -21,15 +21,15 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Container className={"py-5"}>
-        <Row>
+        <Row className={"mb-5 align-items-center"}>
           <Col>
-            <h1 className={"mb-4"}>Deployment Dashboard</h1>
+            <h1>Deployment Dashboard</h1>
           </Col>
           <Col className={"text-end flex-grow-0"}>
             <ThemeSelector />
           </Col>
         </Row>
-        <Row>
+        <Row className={"mb-3"}>
           <Col>
             <h2 className={"mb-3"}>Services</h2>
             <ServicesTable />
