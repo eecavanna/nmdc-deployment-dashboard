@@ -15,7 +15,7 @@ interface Props {
   formatStr?: (value: string) => ReactNode;
 }
 
-const VersionIndicator: React.FC<Props> = ({
+const ValueIndicator: React.FC<Props> = ({
   value,
   refetch,
   isRefetching,
@@ -64,4 +64,4 @@ const VersionIndicator: React.FC<Props> = ({
   );
 };
 
-export default VersionIndicator;
+export default ValueIndicator;

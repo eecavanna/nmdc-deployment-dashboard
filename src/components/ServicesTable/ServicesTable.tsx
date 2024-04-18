@@ -7,7 +7,7 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/Button";
-import VersionIndicator from "./VersionIndicator.tsx";
+import ValueIndicator from "../ValueIndicator.tsx";
 import classes from "./ServicesTable.module.css";
 
 interface Props {}
@@ -76,7 +76,7 @@ const ServicesTable: React.FC<Props> = () => {
                             Latest PyPI Package
                           </a>
                         </span>
-                        <VersionIndicator
+                        <ValueIndicator
                           value={
                             nmdcSchemaLatestPyPiPackageVersion.data?.version
                           }
@@ -97,7 +97,7 @@ const ServicesTable: React.FC<Props> = () => {
                             Latest GitHub Release
                           </a>
                         </span>
-                        <VersionIndicator
+                        <ValueIndicator
                           value={
                             nmdcSchemaLatestGitHubReleaseTagName.data?.tagName
                           }
@@ -126,7 +126,7 @@ const ServicesTable: React.FC<Props> = () => {
           <td>Production</td>
           <td>Runtime</td>
           <td>
-            <VersionIndicator
+            <ValueIndicator
               value={
                 productionRuntimeAppAndSchemaVersion.data?.["nmdc-runtime"]
               }
@@ -134,7 +134,7 @@ const ServicesTable: React.FC<Props> = () => {
             />
           </td>
           <td>
-            <VersionIndicator
+            <ValueIndicator
               value={productionRuntimeAppAndSchemaVersion.data?.["nmdc-schema"]}
               {...productionRuntimeAppAndSchemaVersion}
             />
@@ -144,7 +144,7 @@ const ServicesTable: React.FC<Props> = () => {
           <td>Production</td>
           <td>Data Portal</td>
           <td>
-            <VersionIndicator
+            <ValueIndicator
               value={productionDataPortalVersion.data?.version}
               {...productionDataPortalVersion}
             />
@@ -155,7 +155,7 @@ const ServicesTable: React.FC<Props> = () => {
           <td>Development</td>
           <td>Runtime</td>
           <td>
-            <VersionIndicator
+            <ValueIndicator
               value={
                 developmentRuntimeAppAndSchemaVersion.data?.["nmdc-runtime"]
               }
@@ -163,7 +163,7 @@ const ServicesTable: React.FC<Props> = () => {
             />
           </td>
           <td>
-            <VersionIndicator
+            <ValueIndicator
               value={
                 developmentRuntimeAppAndSchemaVersion.data?.["nmdc-schema"]
               }
@@ -175,7 +175,7 @@ const ServicesTable: React.FC<Props> = () => {
           <td>Development</td>
           <td>Data Portal</td>
           <td>
-            <VersionIndicator
+            <ValueIndicator
               value={developmentDataPortalVersion.data?.version}
               {...developmentDataPortalVersion}
             />
@@ -186,13 +186,13 @@ const ServicesTable: React.FC<Props> = () => {
           <td>Napa</td>
           <td>Runtime</td>
           <td>
-            <VersionIndicator
+            <ValueIndicator
               value={napaRuntimeAppAndSchemaVersion.data?.["nmdc-runtime"]}
               {...napaRuntimeAppAndSchemaVersion}
             />
           </td>
           <td>
-            <VersionIndicator
+            <ValueIndicator
               value={napaRuntimeAppAndSchemaVersion.data?.["nmdc-schema"]}
               {...napaRuntimeAppAndSchemaVersion}
             />
@@ -202,7 +202,7 @@ const ServicesTable: React.FC<Props> = () => {
           <td>Sandbox</td>
           <td>Data Portal</td>
           <td>
-            <VersionIndicator
+            <ValueIndicator
               value={sandboxDataPortalVersion.data?.version}
               {...sandboxDataPortalVersion}
             />
