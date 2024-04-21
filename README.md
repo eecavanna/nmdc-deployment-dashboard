@@ -45,6 +45,6 @@ issuing the following command(s) in the root directory of the repository:
 npm run format:check
 
 # Apply format.
-npm run format: write
+npm run format:write
 ```
 
