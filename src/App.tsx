@@ -1,4 +1,6 @@
-import { Col, Container, Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import ThemeSelector from "./components/ThemeSelector.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ServicesTable from "./components/ServicesTable/ServicesTable.tsx";
