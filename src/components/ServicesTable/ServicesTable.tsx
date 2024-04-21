@@ -10,9 +10,7 @@ import Button from "react-bootstrap/Button";
 import ValueIndicator from "../ValueIndicator.tsx";
 import classes from "./ServicesTable.module.css";
 
-interface Props {}
-
-const ServicesTable: React.FC<Props> = () => {
+const ServicesTable: React.FC = () => {
   const nmdcSchemaLatestPyPiPackageVersion = useQuery({
     queryKey: ["getNmdcSchemaLatestPyPiPackageVersion"],
     queryFn: api.getNmdcSchemaLatestPyPiPackageVersion,
@@ -69,6 +67,7 @@ const ServicesTable: React.FC<Props> = () => {
                           <Box className={"me-1"} />
                           <a
                             target={"_blank"}
+                            rel={"noreferrer"}
                             className={"text-decoration-none"}
                             href={"https://pypi.org/project/nmdc-schema"}
                             title={"Open PyPI in new tab"}
@@ -88,6 +87,7 @@ const ServicesTable: React.FC<Props> = () => {
                           <Github className={"me-1"} />
                           <a
                             target={"_blank"}
+                            rel={"noreferrer"}
                             className={"text-decoration-none"}
                             title={"Open GitHub in new tab"}
                             href={

@@ -13,9 +13,7 @@ enum Theme {
   DARK = "dark",
 }
 
-interface Props {}
-
-const ThemeSelector: React.FC<Props> = () => {
+const ThemeSelector: React.FC = () => {
   const [selectedTheme, setSelectedTheme] = useState<Theme>(Theme.DARK);
 
   // Whenever the selected theme changes, update the HTML attribute on the `<html>` tag.

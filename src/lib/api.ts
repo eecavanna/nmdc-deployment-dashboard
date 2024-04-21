@@ -17,9 +17,11 @@ const getValueAtJsonPath = <T>(path: string, json = {}): T | undefined => {
  * Returns a Promise that resolves to the JSON payload of the HTTP response.
  * Returns a Promise that resolves to `undefined` if the HTTP request fails.
  */
-const fetchJson = async (url: string) => {
+const fetchJson = async <T = Record<string, string>>(
+  url: string,
+): Promise<T | undefined> => {
   try {
-    const response = await axios.get(url, { timeout: 3000 });
+    const response = await axios.get<T>(url, { timeout: 3000 });
     return response.data;
   } catch (error) {
     console.error(error);
@@ -93,7 +95,7 @@ const getNmdcSchemaLatestPyPiPackageVersion = async () => {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const pluckCronJobTimestamps = (json: any) => {
+const pluckCronJobTimestamps = (json?: Record<string, any>) => {
   return {
     lastScheduleTime: getValueAtJsonPath<string>(
       "$.cronJobStatus.lastScheduleTime",
